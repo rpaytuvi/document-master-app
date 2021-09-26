@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import configureStore from './store/';
 import Root from './sagas/';
 
@@ -11,8 +11,8 @@ export const reducers = (state, action) => {
   return appReducers(state, action);
 };
 
-createStore = () => {
-  let { store, sagasManager, sagaMiddleware } = configureStore(reducers, Root);
+const createStore = () => {
+  let {store, sagasManager, sagaMiddleware} = configureStore(reducers, Root);
 
   if (module.hot) {
     module.hot.accept(() => {
@@ -27,7 +27,7 @@ createStore = () => {
   }
 
   return store;
-}
+};
 
 const store = createStore();
 

@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Appearance, Text, View } from 'react-native';
-import { Colors } from '../../themes';
+import {Appearance, Text, View} from 'react-native';
+import {Colors} from '../../themes';
 import Styles from './styles';
 
 class Section extends Component {
-
   static propTypes = {
-    title: PropTypes.string.isRequired
-  }
+    title: PropTypes.string.isRequired,
+  };
 
   static defaultProps = {
-    title: ''
-  }
+    title: '',
+  };
 
   render = () => {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
@@ -38,8 +37,7 @@ class Section extends Component {
         </Text>
       </View>
     );
-  }
-
+  };
 }
 
 export default Section;

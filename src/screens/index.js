@@ -1,5 +1,3 @@
 import Root from './root';
 
-export {
-  Root,
-};
+export {Root};

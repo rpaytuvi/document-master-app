@@ -1,3 +1,1 @@
-export function * get (documentsApi, action) {
-
-};
+export function* get(documentsApi, action) {}

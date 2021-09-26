@@ -1,4 +1,4 @@
-import Metrics from "./metrics";
+import Metrics from './metrics';
 
 const size = {
   title: 3 * Metrics.base,

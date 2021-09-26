@@ -1,5 +1,3 @@
 import Documents from './documents';
 
-export {
-  Documents,
-};
+export {Documents};

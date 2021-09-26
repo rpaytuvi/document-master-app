@@ -1,4 +1,4 @@
-import { Fonts, Metrics } from '../../themes';
+import {Fonts, Metrics} from '../../themes';
 
 const Styles = {
   container: {
@@ -13,7 +13,7 @@ const Styles = {
     marginTop: Metrics.base,
     fontSize: Fonts.size.large,
     fontWeight: Fonts.weight.regular,
-  }
-}
+  },
+};
 
 export default Styles;

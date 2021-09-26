@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {
   Appearance,
   SafeAreaView,
@@ -7,15 +7,16 @@ import {
   StatusBar,
   View,
 } from 'react-native';
-import { Header, Section } from '../../components';
-import { Colors } from '../../themes';
+import {Header, Section} from '../../components';
+import {Colors} from '../../themes';
 import DocumentsActions from '../../redux/reducers/documents';
 
 class Root extends Component {
-
   render = () => {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const backgroundStyle = { backgroundColor: isDarkMode ? Colors.black : Colors.white };
+    const backgroundStyle = {
+      backgroundColor: isDarkMode ? Colors.black : Colors.white,
+    };
     return (
       <SafeAreaView style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -28,7 +29,8 @@ class Root extends Component {
               backgroundColor: isDarkMode ? Colors.black : Colors.white,
             }}>
             <Section title="Step One">
-              Edit App.js to change this screen and then come back to see your edits.
+              Edit App.js to change this screen and then come back to see your
+              edits.
             </Section>
             <Section title="Learn More">
               Read the docs to discover what to do next:
@@ -37,18 +39,17 @@ class Root extends Component {
         </ScrollView>
       </SafeAreaView>
     );
-  }
-
+  };
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     fetching: state.documents.fetching,
     documents: state.documents.documents,
-  }
+  };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   getDocuments: () => dispatch(DocumentsActions.get()),
 });
 

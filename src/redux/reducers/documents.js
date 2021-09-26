@@ -1,9 +1,9 @@
-import { createReducer, createActions } from 'reduxsauce';
+import {createReducer, createActions} from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 
 /* ------------- Types and Action Creators ------------- */
 
-const { Types, Creators } = createActions({
+const {Types, Creators} = createActions({
   get: null,
   done: ['documents', 'error'],
 });
@@ -26,14 +26,14 @@ export const DocumentsSelectors = {
 
 /* ------------- Reducers ------------- */
 
-export const get = (state) => {
-  return state.merge({ fetching: true });
+export const get = state => {
+  return state.merge({fetching: true});
 };
 
 export const done = (state, action) => {
-  const { documents, error = null } = action;
-  return state.merge({ 
-    fetching: false, 
+  const {documents, error = null} = action;
+  return state.merge({
+    fetching: false,
     documents,
     error,
   });
