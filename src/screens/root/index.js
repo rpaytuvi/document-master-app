@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   Appearance,
   SafeAreaView,
@@ -8,6 +9,7 @@ import {
 } from 'react-native';
 import { Header, Section } from '../../components';
 import { Colors } from '../../themes';
+import DocumentsActions from '../../redux/reducers/documents';
 
 class Root extends Component {
 
@@ -39,4 +41,15 @@ class Root extends Component {
 
 }
 
-export default Root;
+const mapStateToProps = (state) => {
+  return {
+    fetching: state.documents.fetching,
+    documents: state.documents.documents,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  getDocuments: () => dispatch(DocumentsActions.get()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Root);
