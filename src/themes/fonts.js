@@ -4,6 +4,7 @@ const size = {
   title: 3 * Metrics.base,
   large: 2.5 * Metrics.base,
   regular: 2 * Metrics.base,
+  icons: 3 * Metrics.base,
 };
 
 const weight = {

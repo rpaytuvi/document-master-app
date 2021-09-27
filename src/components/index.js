@@ -1,4 +1,5 @@
-import Header from './section';
-import Section from './section';
+import {HeaderButton, MainButton} from './buttons';
+import Footer from './footer';
+import Header from './header';
 
-export {Header, Section};
+export {HeaderButton, MainButton, Footer, Header};

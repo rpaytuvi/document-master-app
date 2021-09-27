@@ -1,42 +1,37 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {
-  Appearance,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  View,
-} from 'react-native';
-import {Header, Section} from '../../components';
+import {Appearance, SafeAreaView, StatusBar, View} from 'react-native';
+import {Footer, Header} from '../../components';
 import {Colors} from '../../themes';
+import Styles from './styles';
 import DocumentsActions from '../../redux/reducers/documents';
 
 class Root extends Component {
+  showNotifications = () => {
+    console.log('showNotifications');
+  };
+
+  showForm = () => {
+    console.log('showForm');
+  };
+
   render = () => {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const backgroundStyle = {
-      backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    };
     return (
-      <SafeAreaView style={backgroundStyle}>
+      <SafeAreaView
+        style={[
+          Styles.container,
+          {backgroundColor: isDarkMode ? Colors.black : Colors.white},
+        ]}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Header title="Documents" />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
-            <Section title="Step One">
-              Edit App.js to change this screen and then come back to see your
-              edits.
-            </Section>
-            <Section title="Learn More">
-              Read the docs to discover what to do next:
-            </Section>
-          </View>
-        </ScrollView>
+        <Header title="Documents" action={this.showNotifications} />
+        <View
+          style={[
+            Styles.container,
+            {backgroundColor: isDarkMode ? Colors.black : Colors.lightGray},
+          ]}
+        />
+        <Footer action={this.showForm} />
       </SafeAreaView>
     );
   };
