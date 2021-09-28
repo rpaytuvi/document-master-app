@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Appearance, SafeAreaView, StatusBar, View} from 'react-native';
-import {Footer, Header} from '../../components';
+import {DocumentsList, Footer, Header} from '../../components';
 import {Colors} from '../../themes';
 import Styles from './styles';
 import DocumentsActions from '../../redux/reducers/documents';
@@ -17,6 +17,26 @@ class Root extends Component {
 
   render = () => {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
+    const documents = [
+      {
+        name: 'Hope Rod Rye',
+        version: '2.6.16',
+        contributors: [
+          'Carlie Abbot',
+          'Zoe Buckridge',
+          'Carmen Kohler',
+          'Americo',
+          'Comier',
+        ],
+        attachments: ['Light Lager', 'Porter', 'Sour Ale', 'German Wheat'],
+      },
+      {
+        name: 'Stone IPA',
+        version: '3.8.11',
+        contributors: ['Lencra Boyer', 'Sherman', 'Hauck'],
+        attachments: ['Stout', 'Light Hybrid', 'Beer'],
+      },
+    ];
     return (
       <SafeAreaView
         style={[
@@ -29,8 +49,9 @@ class Root extends Component {
           style={[
             Styles.container,
             {backgroundColor: isDarkMode ? Colors.black : Colors.lightGray},
-          ]}
-        />
+          ]}>
+          <DocumentsList documents={documents} />
+        </View>
         <Footer action={this.showForm} />
       </SafeAreaView>
     );

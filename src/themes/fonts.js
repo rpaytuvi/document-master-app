@@ -1,10 +1,9 @@
-import Metrics from './metrics';
-
 const size = {
-  title: 3 * Metrics.base,
-  large: 2.5 * Metrics.base,
-  regular: 2 * Metrics.base,
-  icons: 3 * Metrics.base,
+  title: 24,
+  large: 20,
+  regular: 16,
+  icons: 24,
+  iconsLarge: 28,
 };
 
 const weight = {
