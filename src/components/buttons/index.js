@@ -1,4 +1,5 @@
+import GhostButton from './ghost';
 import HeaderButton from './header';
 import MainButton from './main';
 
-export {HeaderButton, MainButton};
+export {GhostButton, HeaderButton, MainButton};

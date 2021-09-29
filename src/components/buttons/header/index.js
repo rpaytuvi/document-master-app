@@ -7,13 +7,11 @@ import Styles from './styles';
 
 class HeaderButton extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
     onPress: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
   };
 
   static defaultProps = {
-    title: '',
     onPress: () => {},
     disabled: false,
   };

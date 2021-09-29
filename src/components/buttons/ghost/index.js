@@ -5,12 +5,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Fonts} from '../../../themes';
 import Styles from './styles';
 
-class MainButton extends Component {
+class GhostButton extends Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     icon: PropTypes.string,
     onPress: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    customStyle: PropTypes.object,
+    customIconStyle: PropTypes.object,
   };
 
   static defaultProps = {
@@ -18,17 +20,19 @@ class MainButton extends Component {
     icon: '',
     onPress: () => {},
     disabled: false,
+    customStyle: {},
+    customIconStyle: {},
   };
 
   render = () => {
     return (
       <TouchableOpacity
         disabled={this.props.disabled}
-        style={Styles.container}
+        style={[Styles.container, this.props.customStyle]}
         onPress={this.props.onPress}>
         {this.props.icon !== '' && (
           <Icon
-            style={Styles.icon}
+            style={[Styles.icon, this.props.customIconStyle]}
             size={Fonts.size.icons}
             name={this.props.icon}
           />
@@ -39,4 +43,4 @@ class MainButton extends Component {
   };
 }
 
-export default MainButton;
+export default GhostButton;
