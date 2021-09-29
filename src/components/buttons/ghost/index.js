@@ -7,11 +7,12 @@ import Styles from './styles';
 
 class GhostButton extends Component {
   static propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     icon: PropTypes.string,
     onPress: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
     customStyle: PropTypes.object,
+    customTextStyle: PropTypes.object,
     customIconStyle: PropTypes.object,
   };
 
@@ -21,6 +22,7 @@ class GhostButton extends Component {
     onPress: () => {},
     disabled: false,
     customStyle: {},
+    customTextStyle: {},
     customIconStyle: {},
   };
 
@@ -37,7 +39,9 @@ class GhostButton extends Component {
             name={this.props.icon}
           />
         )}
-        <Text style={Styles.text}>{this.props.text}</Text>
+        <Text style={[Styles.text, this.props.customTextStyle]}>
+          {this.props.text}
+        </Text>
       </TouchableOpacity>
     );
   };

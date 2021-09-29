@@ -20,16 +20,25 @@ class DocumentsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewType: 'list',
+      sort: {
+        field: 'name',
+        order: 'asc',
+      },
+      view: 'list',
     };
   }
 
+  changeView = view => {
+    this.setState({view});
+  };
+
   renderItem = ({item, index}) => {
-    return this.state.viewType === 'grid' ? (
+    return this.state.view === 'grid' ? (
       <DocumentSmallListElement
         id={'document-' + index}
         name={item.name}
         version={item.version}
+        customStyle={index % 2 !== 0 ? Styles.noMarginLeft : {}}
       />
     ) : (
       <DocumentLargeListElement
@@ -45,10 +54,16 @@ class DocumentsList extends Component {
   render = () => {
     return (
       <FlatList
+        key={'document-' + this.state.view}
         contentContainerStyle={Styles.container}
         ListHeaderComponentStyle={Styles.headerContainer}
-        ListHeaderComponent={<DocumentsListHeader />}
-        numColumns={this.state.viewType === 'grid' ? 2 : 1}
+        ListHeaderComponent={
+          <DocumentsListHeader
+            selectedView={this.state.view}
+            changeView={this.changeView}
+          />
+        }
+        numColumns={this.state.view === 'grid' ? 2 : 1}
         data={this.props.documents}
         renderItem={this.renderItem}
       />

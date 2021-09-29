@@ -1,54 +1,49 @@
 import React, {Component} from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 import {View} from 'react-native';
-import {GhostButton} from '../../';
-import {Fonts} from '../../../themes';
+import {ButtonGroup} from '../../';
 import Styles from './styles';
 
 class DocumentsListHeader extends Component {
+  static propTypes = {
+    selectedView: PropTypes.string.isRequired,
+    changeView: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    selectedView: 'list',
+    changeView: () => {},
+  };
+
   render = () => {
-    const sortButtons = [
-      {
-        element: () => (
-          <GhostButton
-            text={'Sort by'}
-            onPress={() => {}}
-            icon={'unfold-more'}
-            customStyle={Styles.sortButton}
-            customIconStyle={{marginRight: 0}}
-          />
-        ),
-        style: {flex: 2},
-      },
-      {
-        element: () => <Icon style={Styles.icon} size={Fonts.size.iconsLarge} name={'keyboard-arrow-down'} />,
-        style: {flex: 1},
-      },
-    ];
-    const viewTypeButtons = [
-      {
-        element: () => <Icon style={Styles.icon} size={Fonts.size.iconsLarge} name={'list'} />
-      },
-      {
-        element: () => <Icon style={Styles.icon} size={Fonts.size.iconsLarge} name={'grid-view'} />
-      },
-    ];
     return (
       <View style={Styles.container}>
-        {/* <ButtonGroup
-          containerStyle={[Styles.buttonContainer, Styles.bigButtonContainer]}
-          buttons={sortButtons}
-          buttonStyle={Styles.button}
-          innerBorderStyle={Styles.innerBorder}
-          selectedIndex={0}
-          selectedButtonStyle={Styles.button}
-        />
-        <ButtonGroup
-          containerStyle={[Styles.buttonContainer, Styles.smallButtonContainer]}
-          buttons={viewTypeButtons}
-          buttonStyle={Styles.button}
-          innerBorderStyle={Styles.innerBorder}
-        /> */}
+        <View style={Styles.buttonGroupContainer}>
+          <ButtonGroup
+            textLeft={'Sort by'}
+            iconLeft={'unfold-more'}
+            textRight={''}
+            iconRight={'keyboard-arrow-down'}
+            leftBigger={true}
+            onPressLeft={() => {}}
+            onPressRight={() => {}}
+          />
+        </View>
+        <View style={Styles.buttonGroupContainer}>
+          <ButtonGroup
+            textLeft={''}
+            iconLeft={'list'}
+            textRight={''}
+            iconRight={'grid-view'}
+            onPressLeft={() => {
+              this.props.changeView('list');
+            }}
+            onPressRight={() => {
+              this.props.changeView('grid');
+            }}
+            selectedIndex={this.props.selectedView === 'list' ? 0 : 1}
+          />
+        </View>
       </View>
     );
   };

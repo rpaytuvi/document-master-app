@@ -9,12 +9,14 @@ class DocumentSmallListElement extends Component {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     version: PropTypes.string.isRequired,
+    customStyle: PropTypes.object,
   };
 
   static defaultProps = {
     id: '',
     name: '',
     version: '',
+    customStyle: {},
   };
 
   render = () => {
@@ -23,7 +25,9 @@ class DocumentSmallListElement extends Component {
       backgroundColor: isDarkMode ? Colors.black : Colors.white,
     };
     return (
-      <View key={this.props.id} style={[Styles.container, backgroundStyle]}>
+      <View
+        key={this.props.id}
+        style={[Styles.container, this.props.customStyle, backgroundStyle]}>
         <Text style={Styles.name} numberOfLines={1}>
           {this.props.name}
         </Text>
