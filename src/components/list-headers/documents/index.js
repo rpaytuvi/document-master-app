@@ -6,12 +6,16 @@ import Styles from './styles';
 
 class DocumentsListHeader extends Component {
   static propTypes = {
+    sortDirection: PropTypes.string.isRequired,
     selectedView: PropTypes.string.isRequired,
+    toggleSortDirection: PropTypes.func.isRequired,
     changeView: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
+    sortDirection: 'desc',
     selectedView: 'list',
+    toggleSortDirection: () => {},
     changeView: () => {},
   };
 
@@ -23,10 +27,16 @@ class DocumentsListHeader extends Component {
             textLeft={'Sort by'}
             iconLeft={'unfold-more'}
             textRight={''}
-            iconRight={'keyboard-arrow-down'}
+            iconRight={
+              this.props.sortDirection === 'desc'
+                ? 'keyboard-arrow-down'
+                : 'keyboard-arrow-up'
+            }
             leftBigger={true}
             onPressLeft={() => {}}
-            onPressRight={() => {}}
+            onPressRight={() => {
+              this.props.toggleSortDirection();
+            }}
           />
         </View>
         <View style={Styles.buttonGroupContainer}>

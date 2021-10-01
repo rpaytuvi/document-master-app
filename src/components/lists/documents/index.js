@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {FlatList} from 'react-native';
+import {Arrays} from '../../../utils';
 import {
   DocumentLargeListElement,
   DocumentSmallListElement,
@@ -22,11 +23,20 @@ class DocumentsList extends Component {
     this.state = {
       sort: {
         field: 'name',
-        order: 'asc',
+        direction: 'desc',
       },
       view: 'list',
     };
   }
+
+  toggleSortDirection = () => {
+    this.setState({
+      sort: {
+        field: this.state.sort.field,
+        direction: this.state.sort.direction === 'desc' ? 'asc' : 'desc',
+      },
+    });
+  };
 
   changeView = view => {
     this.setState({view});
@@ -59,12 +69,18 @@ class DocumentsList extends Component {
         ListHeaderComponentStyle={Styles.headerContainer}
         ListHeaderComponent={
           <DocumentsListHeader
+            sortDirection={this.state.sort.direction}
             selectedView={this.state.view}
+            toggleSortDirection={this.toggleSortDirection}
             changeView={this.changeView}
           />
         }
         numColumns={this.state.view === 'grid' ? 2 : 1}
-        data={this.props.documents}
+        data={Arrays.sortByField(
+          this.props.documents,
+          this.state.sort.field,
+          this.state.sort.direction,
+        )}
         renderItem={this.renderItem}
       />
     );
