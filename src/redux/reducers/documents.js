@@ -15,7 +15,7 @@ export default Creators;
 
 export const INITIAL_STATE = Immutable({
   fetching: false,
-  error: null,
+  error: '',
   documents: [],
 });
 
@@ -31,7 +31,7 @@ export const get = state => {
 };
 
 export const done = (state, action) => {
-  const {documents, error = null} = action;
+  const {documents, error = ''} = action;
   return state.merge({
     fetching: false,
     documents,

@@ -1,4 +1,5 @@
 import {GhostButton, HeaderButton, MainButton, RadioButton} from './buttons';
+import {DocumentForm} from './forms';
 import {
   DocumentLargeListElement,
   DocumentSmallListElement,
@@ -11,6 +12,7 @@ import Footer from './footer';
 import Header from './header';
 
 export {
+  DocumentForm,
   GhostButton,
   HeaderButton,
   MainButton,

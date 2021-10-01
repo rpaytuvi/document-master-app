@@ -1,42 +1,37 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Appearance, SafeAreaView, StatusBar, View} from 'react-native';
-import {DocumentsList, Footer, Header} from '../../components';
+import {DocumentForm, DocumentsList, Footer, Header} from '../../components';
 import {Colors} from '../../themes';
 import Styles from './styles';
 import DocumentsActions from '../../redux/reducers/documents';
 
 class Root extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formVisible: false,
+    };
+  }
+
+  componentDidMount = () => {
+    this.props.getDocuments();
+  };
+
   showNotifications = () => {
     console.log('showNotifications');
   };
 
   showForm = () => {
-    console.log('showForm');
+    this.setState({formVisible: true});
+  };
+
+  hideForm = () => {
+    this.setState({formVisible: false});
   };
 
   render = () => {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const documents = [
-      {
-        title: 'Hope Rod Rye',
-        version: '2.6.16',
-        contributors: [
-          'Carlie Abbot',
-          'Zoe Buckridge',
-          'Carmen Kohler',
-          'Americo',
-          'Comier',
-        ],
-        attachments: ['Light Lager', 'Porter', 'Sour Ale', 'German Wheat'],
-      },
-      {
-        title: 'Stone IPA',
-        version: '3.8.11',
-        contributors: ['Lencra Boyer', 'Sherman', 'Hauck'],
-        attachments: ['Stout', 'Light Hybrid', 'Beer'],
-      },
-    ];
     return (
       <SafeAreaView
         style={[
@@ -50,9 +45,21 @@ class Root extends Component {
             Styles.container,
             {backgroundColor: isDarkMode ? Colors.black : Colors.lightGray},
           ]}>
-          <DocumentsList documents={documents} />
+          <DocumentsList
+            error={this.props.error}
+            documents={[...this.props.documents]}
+          />
         </View>
-        <Footer action={this.showForm} />
+        <Footer
+          buttonText={'Add document'}
+          buttonIcon={'add'}
+          action={this.showForm}
+        />
+        <DocumentForm
+          title={'Add document'}
+          visible={this.state.formVisible}
+          dismiss={this.hideForm}
+        />
       </SafeAreaView>
     );
   };
@@ -62,6 +69,7 @@ const mapStateToProps = state => {
   return {
     fetching: state.documents.fetching,
     documents: state.documents.documents,
+    error: state.documents.error,
   };
 };
 

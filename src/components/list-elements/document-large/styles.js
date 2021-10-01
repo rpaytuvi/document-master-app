@@ -23,6 +23,7 @@ const Styles = {
     fontSize: Fonts.size.large,
     fontWeight: Fonts.weight.bold,
     marginRight: Metrics.base,
+    maxWidth: 200,
   },
   listName: {
     fontSize: Fonts.size.regular,

@@ -16,11 +16,11 @@ const Styles = {
   },
   header: {
     alignItems: 'flex-end',
+    marginBottom: 2 * Metrics.base,
   },
   closeButton: {
     flex: 0,
     borderWidth: 0,
-    marginBottom: 2 * Metrics.base,
   },
   closeButtonIcon: {
     marginRight: 0,

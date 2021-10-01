@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {FlatList} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {Arrays} from '../../../utils';
 import {
   CustomModal,
@@ -14,24 +14,26 @@ import Styles from './styles';
 class DocumentsList extends Component {
   static propTypes = {
     documents: PropTypes.array.isRequired,
+    error: PropTypes.string,
   };
 
   static defaultProps = {
     documents: [],
+    error: '',
   };
 
   constructor(props) {
     super(props);
     this.radioButtons = [
-      {title: 'Title', field: 'title'},
-      {title: 'Version', field: 'version'},
-      {title: 'Created', field: 'created'},
-      {title: 'Updated', field: 'updated'},
+      {title: 'Title', field: 'Title'},
+      {title: 'Version', field: 'Version'},
+      {title: 'Created', field: 'CreatedAt'},
+      {title: 'Updated', field: 'UpdatedAt'},
     ];
     this.state = {
       sortByVisible: false,
       sort: {
-        field: 'title',
+        field: 'Title',
         direction: 'desc',
       },
       view: 'list',
@@ -73,17 +75,17 @@ class DocumentsList extends Component {
     return this.state.view === 'grid' ? (
       <DocumentSmallListElement
         id={'document-' + index}
-        title={item.title}
-        version={item.version}
+        title={item.Title}
+        version={item.Version}
         customStyle={index % 2 !== 0 ? Styles.noMarginLeft : {}}
       />
     ) : (
       <DocumentLargeListElement
         id={'document-' + index}
-        title={item.title}
-        version={item.version}
-        contributors={item.contributors}
-        attachments={item.attachments}
+        title={item.Title}
+        version={item.Version}
+        contributors={item.Contributors.map(c => c.Name)}
+        attachments={item.Attachments}
       />
     );
   };
@@ -117,6 +119,15 @@ class DocumentsList extends Component {
               toggleSortDirection={this.toggleSortDirection}
               changeView={this.changeView}
             />
+          }
+          ListEmptyComponent={
+            <View style={Styles.emptyContainer}>
+              <Text style={Styles.emptyText}>
+                {this.props.error
+                  ? this.props.error
+                  : 'No documents to display'}
+              </Text>
+            </View>
           }
           numColumns={this.state.view === 'grid' ? 2 : 1}
           data={Arrays.sortByField(

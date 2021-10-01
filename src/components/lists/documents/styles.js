@@ -1,4 +1,4 @@
-import {Metrics} from '../../../themes';
+import {Colors, Fonts, Metrics} from '../../../themes';
 
 const Styles = {
   container: {
@@ -6,6 +6,15 @@ const Styles = {
   },
   noMarginLeft: {
     marginLeft: 0,
+  },
+  emptyContainer: {
+    marginTop: 10 * Metrics.base,
+    padding: 2 * Metrics.base,
+  },
+  emptyText: {
+    textAlign: 'center',
+    color: Colors.help,
+    fontSize: Fonts.size.title,
   },
 };
 

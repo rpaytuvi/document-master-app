@@ -7,12 +7,14 @@ import Styles from './styles';
 
 class Footer extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+    buttonIcon: PropTypes.string,
     action: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    title: '',
+    buttonText: '',
+    buttonIcon: '',
     action: () => {},
   };
 
@@ -24,8 +26,8 @@ class Footer extends Component {
     return (
       <View style={[Styles.container, backgroundStyle]}>
         <MainButton
-          text="Add document"
-          icon="add"
+          text={this.props.buttonText}
+          icon={this.props.buttonIcon}
           onPress={this.props.action}
         />
       </View>
