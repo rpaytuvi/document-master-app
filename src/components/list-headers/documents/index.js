@@ -8,6 +8,7 @@ class DocumentsListHeader extends Component {
   static propTypes = {
     sortDirection: PropTypes.string.isRequired,
     selectedView: PropTypes.string.isRequired,
+    openSortBy: PropTypes.func.isRequired,
     toggleSortDirection: PropTypes.func.isRequired,
     changeView: PropTypes.func.isRequired,
   };
@@ -15,6 +16,7 @@ class DocumentsListHeader extends Component {
   static defaultProps = {
     sortDirection: 'desc',
     selectedView: 'list',
+    openSortBy: () => {},
     toggleSortDirection: () => {},
     changeView: () => {},
   };
@@ -33,7 +35,9 @@ class DocumentsListHeader extends Component {
                 : 'keyboard-arrow-up'
             }
             leftBigger={true}
-            onPressLeft={() => {}}
+            onPressLeft={() => {
+              this.props.openSortBy();
+            }}
             onPressRight={() => {
               this.props.toggleSortDirection();
             }}

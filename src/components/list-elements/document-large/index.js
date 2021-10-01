@@ -8,7 +8,7 @@ import Styles from './styles';
 class DocumentLargeListElement extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     version: PropTypes.string.isRequired,
     contributors: PropTypes.array,
     attachments: PropTypes.array,
@@ -16,7 +16,7 @@ class DocumentLargeListElement extends Component {
 
   static defaultProps = {
     id: '',
-    name: '',
+    title: '',
     version: '',
     contributors: [],
     attachments: [],
@@ -52,7 +52,7 @@ class DocumentLargeListElement extends Component {
       <View key={this.props.id} style={[Styles.container, backgroundStyle]}>
         <View style={Styles.nameContainer}>
           <Text style={Styles.name} numberOfLines={1}>
-            {this.props.name}
+            {this.props.title}
           </Text>
           <Text style={Styles.version} numberOfLines={1}>
             Version {this.props.version}

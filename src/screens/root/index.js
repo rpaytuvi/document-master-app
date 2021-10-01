@@ -19,7 +19,7 @@ class Root extends Component {
     const isDarkMode = Appearance.getColorScheme() === 'dark';
     const documents = [
       {
-        name: 'Hope Rod Rye',
+        title: 'Hope Rod Rye',
         version: '2.6.16',
         contributors: [
           'Carlie Abbot',
@@ -31,7 +31,7 @@ class Root extends Component {
         attachments: ['Light Lager', 'Porter', 'Sour Ale', 'German Wheat'],
       },
       {
-        name: 'Stone IPA',
+        title: 'Stone IPA',
         version: '3.8.11',
         contributors: ['Lencra Boyer', 'Sherman', 'Hauck'],
         attachments: ['Stout', 'Light Hybrid', 'Beer'],

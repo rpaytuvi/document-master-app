@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import {FlatList} from 'react-native';
 import {Arrays} from '../../../utils';
 import {
+  CustomModal,
   DocumentLargeListElement,
   DocumentSmallListElement,
   DocumentsListHeader,
+  RadioButton,
 } from '../../';
 import Styles from './styles';
 
@@ -20,14 +22,39 @@ class DocumentsList extends Component {
 
   constructor(props) {
     super(props);
+    this.radioButtons = [
+      {title: 'Title', field: 'title'},
+      {title: 'Version', field: 'version'},
+      {title: 'Created', field: 'created'},
+      {title: 'Updated', field: 'updated'},
+    ];
     this.state = {
+      sortByVisible: false,
       sort: {
-        field: 'name',
+        field: 'title',
         direction: 'desc',
       },
       view: 'list',
     };
   }
+
+  dismissModal = () => {
+    this.setState({sortByVisible: false});
+  };
+
+  selectSortField = field => {
+    this.setState({
+      sort: {
+        field,
+        direction: this.state.sort.direction,
+      },
+    });
+    this.dismissModal();
+  };
+
+  openSortBy = () => {
+    this.setState({sortByVisible: true});
+  };
 
   toggleSortDirection = () => {
     this.setState({
@@ -46,14 +73,14 @@ class DocumentsList extends Component {
     return this.state.view === 'grid' ? (
       <DocumentSmallListElement
         id={'document-' + index}
-        name={item.name}
+        title={item.title}
         version={item.version}
         customStyle={index % 2 !== 0 ? Styles.noMarginLeft : {}}
       />
     ) : (
       <DocumentLargeListElement
         id={'document-' + index}
-        name={item.name}
+        title={item.title}
         version={item.version}
         contributors={item.contributors}
         attachments={item.attachments}
@@ -63,26 +90,43 @@ class DocumentsList extends Component {
 
   render = () => {
     return (
-      <FlatList
-        key={'document-' + this.state.view}
-        contentContainerStyle={Styles.container}
-        ListHeaderComponentStyle={Styles.headerContainer}
-        ListHeaderComponent={
-          <DocumentsListHeader
-            sortDirection={this.state.sort.direction}
-            selectedView={this.state.view}
-            toggleSortDirection={this.toggleSortDirection}
-            changeView={this.changeView}
-          />
-        }
-        numColumns={this.state.view === 'grid' ? 2 : 1}
-        data={Arrays.sortByField(
-          this.props.documents,
-          this.state.sort.field,
-          this.state.sort.direction,
-        )}
-        renderItem={this.renderItem}
-      />
+      <>
+        <CustomModal
+          visible={this.state.sortByVisible}
+          dismiss={this.dismissModal}>
+          {this.radioButtons.map((button, i) => (
+            <RadioButton
+              key={'radion-button-' + i}
+              text={button.title}
+              selected={this.state.sort.field === button.field}
+              onPress={() => {
+                this.selectSortField(button.field);
+              }}
+            />
+          ))}
+        </CustomModal>
+        <FlatList
+          key={'document-' + this.state.view}
+          contentContainerStyle={Styles.container}
+          ListHeaderComponentStyle={Styles.headerContainer}
+          ListHeaderComponent={
+            <DocumentsListHeader
+              sortDirection={this.state.sort.direction}
+              selectedView={this.state.view}
+              openSortBy={this.openSortBy}
+              toggleSortDirection={this.toggleSortDirection}
+              changeView={this.changeView}
+            />
+          }
+          numColumns={this.state.view === 'grid' ? 2 : 1}
+          data={Arrays.sortByField(
+            this.props.documents,
+            this.state.sort.field,
+            this.state.sort.direction,
+          )}
+          renderItem={this.renderItem}
+        />
+      </>
     );
   };
 }

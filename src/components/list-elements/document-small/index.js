@@ -7,14 +7,14 @@ import Styles from './styles';
 class DocumentSmallListElement extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     version: PropTypes.string.isRequired,
     customStyle: PropTypes.object,
   };
 
   static defaultProps = {
     id: '',
-    name: '',
+    title: '',
     version: '',
     customStyle: {},
   };
@@ -29,7 +29,7 @@ class DocumentSmallListElement extends Component {
         key={this.props.id}
         style={[Styles.container, this.props.customStyle, backgroundStyle]}>
         <Text style={Styles.name} numberOfLines={1}>
-          {this.props.name}
+          {this.props.title}
         </Text>
         <Text style={Styles.version} numberOfLines={1}>
           Version {this.props.version}
