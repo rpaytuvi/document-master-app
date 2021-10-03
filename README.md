@@ -69,9 +69,10 @@ My thought and work process was:
 2. Mock documents data in the application root screen.
 3. Implement the visual components.
 4. Add services for communication with the APIs.
-5. Add behaviour to the visual components, based on the requirements and the data received from the APIs.
-6. Add testing suite and fix any errors that may have appeared.
-7. Final functional testing on iOS and Android before delivering.
+5. Add redux, design and test the state.
+6. Add behaviour to the visual components, based on the requirements and the data received from the APIs.
+7. Add testing suite and fix any errors that may have appeared.
+8. Final functional testing on iOS and Android before delivering.
 
 ### Which parts are you most proud of? And why?
 
