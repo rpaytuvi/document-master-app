@@ -5,6 +5,7 @@ import Immutable from 'seamless-immutable';
 
 const {Types, Creators} = createActions({
   get: null,
+  save: ['document'],
   done: ['documents', 'error'],
 });
 
@@ -26,7 +27,7 @@ export const DocumentsSelectors = {
 
 /* ------------- Reducers ------------- */
 
-export const get = state => {
+export const start = state => {
   return state.merge({fetching: true});
 };
 
@@ -40,6 +41,7 @@ export const done = (state, action) => {
 };
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [Types.GET]: get,
+  [Types.GET]: start,
+  [Types.SAVE]: start,
   [Types.DONE]: done,
 });

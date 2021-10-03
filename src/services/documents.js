@@ -8,8 +8,11 @@ const create = (
 ) => {
   const get = () => Axios.get(`${baseUrl}documents`);
 
+  const post = document => Axios.post(`${baseUrl}documents`, document);
+
   return {
     get,
+    post,
   };
 };
 

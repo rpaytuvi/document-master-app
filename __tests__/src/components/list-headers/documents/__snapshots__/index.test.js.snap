@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+      "justifyContent": "space-between",
+      "marginBottom": 16,
+      "paddingHorizontal": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "width": 140,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 2,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderBottomRightRadius": 0,
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderTopRightRadius": 0,
+              "borderWidth": 2,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Icon
+            name="unfold-more"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            Sort by
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderBottomLeftRadius": 0,
+              "borderColor": "#e8e9ec",
+              "borderLeftWidth": 0,
+              "borderRadius": 4,
+              "borderTopLeftRadius": 0,
+              "borderWidth": 2,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Icon
+            name="keyboard-arrow-down"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "width": 140,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-start",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderBottomRightRadius": 0,
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderTopRightRadius": 0,
+              "borderWidth": 2,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Icon
+            name="list"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "color": "#3f82f2",
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#f4f4f6",
+              "borderBottomLeftRadius": 0,
+              "borderColor": "#e8e9ec",
+              "borderLeftWidth": 0,
+              "borderRadius": 4,
+              "borderTopLeftRadius": 0,
+              "borderWidth": 2,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Icon
+            name="grid-view"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

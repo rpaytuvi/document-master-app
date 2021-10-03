@@ -1,3 +1,4 @@
 import Documents from './documents';
+import Notifications from './notifications';
 
-export {Documents};
+export {Documents, Notifications};

@@ -15,11 +15,15 @@ class DocumentsList extends Component {
   static propTypes = {
     documents: PropTypes.array.isRequired,
     error: PropTypes.string,
+    fetching: PropTypes.bool,
+    onRefresh: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     documents: [],
     error: '',
+    fetching: false,
+    onRefresh: () => {},
   };
 
   constructor(props) {
@@ -84,7 +88,7 @@ class DocumentsList extends Component {
         id={'document-' + index}
         title={item.Title}
         version={item.Version}
-        contributors={item.Contributors.map(c => c.Name)}
+        contributors={item.Contributors}
         attachments={item.Attachments}
       />
     );
@@ -136,6 +140,8 @@ class DocumentsList extends Component {
             this.state.sort.direction,
           )}
           renderItem={this.renderItem}
+          refreshing={this.props.fetching}
+          onRefresh={this.props.onRefresh}
         />
       </>
     );

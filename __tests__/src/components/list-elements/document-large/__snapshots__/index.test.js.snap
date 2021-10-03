@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderRadius": 4,
+      "elevation": 12,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "marginBottom": 16,
+      "marginHorizontal": 16,
+      "padding": 16,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#182333",
+          "fontSize": 20,
+          "fontWeight": "600",
+          "marginRight": 8,
+          "maxWidth": 200,
+        }
+      }
+    >
+      
+    </Text>
+    <Text
+      numberOfLines={1}
+      style={
+        Object {
+          "color": "#6f7583",
+          "fontSize": 16,
+        }
+      }
+    >
+      Version 
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "marginTop": 16,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "flex-end",
+              "flexDirection": "row",
+            },
+            Object {
+              "alignItems": "center",
+              "marginBottom": 4,
+            },
+          ]
+        }
+      >
+        <Icon
+          name="groups"
+          size={28}
+          style={
+            Object {
+              "color": "#646d7a",
+              "marginRight": 8,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#182333",
+                "fontSize": 20,
+                "fontWeight": "600",
+                "marginRight": 8,
+                "maxWidth": 200,
+              },
+              Object {
+                "fontSize": 16,
+              },
+            ]
+          }
+        >
+          Contributors
+        </Text>
+      </View>
+      <View />
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "flex-end",
+              "flexDirection": "row",
+            },
+            Object {
+              "alignItems": "center",
+              "marginBottom": 4,
+            },
+          ]
+        }
+      >
+        <Icon
+          name="attachment"
+          size={28}
+          style={
+            Object {
+              "color": "#646d7a",
+              "marginRight": 8,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#182333",
+                "fontSize": 20,
+                "fontWeight": "600",
+                "marginRight": 8,
+                "maxWidth": 200,
+              },
+              Object {
+                "fontSize": 16,
+              },
+            ]
+          }
+        >
+          Attachments
+        </Text>
+      </View>
+      <View />
+    </View>
+  </View>
+</View>
+`;

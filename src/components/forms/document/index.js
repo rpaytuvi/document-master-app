@@ -9,12 +9,14 @@ class DocumentForm extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     visible: PropTypes.bool.isRequired,
+    saveDocument: PropTypes.func.isRequired,
     dismiss: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     title: '',
     visible: false,
+    saveDocument: () => {},
     dismiss: () => {},
   };
 
@@ -35,13 +37,20 @@ class DocumentForm extends Component {
     });
   };
 
-  onShow = () => {
+  dismiss = () => {
+    this.props.dismiss();
     this.clearState();
   };
 
   saveDocument = () => {
-    this.props.dismiss();
-    this.clearState();
+    const document = {
+      Title: this.state.name,
+      Version: this.state.version,
+      Attachments: [this.state.file],
+      Contributors: ['Rafael Paytuvi'],
+    };
+    this.dismiss();
+    this.props.saveDocument(document);
   };
 
   render = () => {
@@ -50,19 +59,14 @@ class DocumentForm extends Component {
         animationType={'slide'}
         transparent={true}
         visible={this.props.visible}
-        onShow={this.onShow}
-        onRequestClose={() => {
-          this.props.dismiss();
-        }}>
+        onRequestClose={this.dismiss}>
         <View style={Styles.container}>
           <View style={Styles.modal}>
             <View style={Styles.header}>
               <Text style={Styles.title}>{this.props.title}</Text>
               <GhostButton
                 icon={'close'}
-                onPress={() => {
-                  this.props.dismiss();
-                }}
+                onPress={this.dismiss}
                 customStyle={Styles.closeButton}
                 customIconStyle={Styles.closeButtonIcon}
               />

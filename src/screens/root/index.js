@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Appearance, SafeAreaView, StatusBar, View} from 'react-native';
+import {Alert, SafeAreaView, StatusBar, View} from 'react-native';
 import {DocumentForm, DocumentsList, Footer, Header} from '../../components';
-import {Colors} from '../../themes';
+import {Notifications} from '../../services';
+import {Datetime} from '../../utils';
 import Styles from './styles';
 import DocumentsActions from '../../redux/reducers/documents';
 
@@ -11,19 +12,47 @@ class Root extends Component {
     super(props);
     this.state = {
       formVisible: false,
+      lastNotification: null,
     };
   }
 
   componentDidMount = () => {
+    this.getDocuments();
+    Notifications.onmessage = this.handleNewNotification;
+  };
+
+  getDocuments = () => {
     this.props.getDocuments();
   };
 
+  handleNewNotification = message => {
+    this.setState({lastNotification: JSON.parse(message.data)});
+  };
+
   showNotifications = () => {
-    console.log('showNotifications');
+    const {DocumentTitle, Timestamp, UserName} = this.state.lastNotification;
+    const title = 'New document created';
+    const message = `
+      Name: ${DocumentTitle}
+      Created by: ${UserName}
+      At: ${Datetime.relative(Timestamp)}
+    `;
+    Alert.alert(title, message, [
+      {
+        text: 'Got it',
+        onPress: () => {},
+        style: 'cancel',
+      },
+    ]);
+    this.setState({lastNotification: null});
   };
 
   showForm = () => {
     this.setState({formVisible: true});
+  };
+
+  saveDocument = document => {
+    this.props.saveDocument(document);
   };
 
   hideForm = () => {
@@ -31,23 +60,20 @@ class Root extends Component {
   };
 
   render = () => {
-    const isDarkMode = Appearance.getColorScheme() === 'dark';
     return (
-      <SafeAreaView
-        style={[
-          Styles.container,
-          {backgroundColor: isDarkMode ? Colors.black : Colors.white},
-        ]}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Header title="Documents" action={this.showNotifications} />
-        <View
-          style={[
-            Styles.container,
-            {backgroundColor: isDarkMode ? Colors.black : Colors.lightGray},
-          ]}>
+      <SafeAreaView style={Styles.container}>
+        <StatusBar barStyle={'dark-content'} />
+        <Header
+          title={'Documents'}
+          action={this.showNotifications}
+          withAlert={this.state.lastNotification ? true : false}
+        />
+        <View style={Styles.container}>
           <DocumentsList
+            fetching={this.props.fetching}
             error={this.props.error}
             documents={[...this.props.documents]}
+            onRefresh={this.getDocuments}
           />
         </View>
         <Footer
@@ -58,6 +84,7 @@ class Root extends Component {
         <DocumentForm
           title={'Add document'}
           visible={this.state.formVisible}
+          saveDocument={this.saveDocument}
           dismiss={this.hideForm}
         />
       </SafeAreaView>
@@ -75,6 +102,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getDocuments: () => dispatch(DocumentsActions.get()),
+  saveDocument: document => dispatch(DocumentsActions.save(document)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Root);

@@ -1,4 +1,5 @@
 import Arrays from './arrays';
+import Datetime from './datetime';
 import Strings from './strings';
 
-export {Arrays, Strings};
+export {Arrays, Datetime, Strings};

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "borderBottomWidth": 2,
+      "borderColor": "#e8e9ec",
+      "flexDirection": "row",
+      "marginTop": 8,
+      "padding": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 3,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 24,
+          "fontWeight": "600",
+        }
+      }
+    >
+      
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#e8e9ec",
+          "borderRadius": 4,
+          "borderWidth": 2,
+          "opacity": 1,
+          "padding": 8,
+        }
+      }
+    >
+      <Icon
+        name="notifications"
+        size={24}
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "#646d7a",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

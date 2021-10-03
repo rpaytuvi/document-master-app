@@ -19,8 +19,8 @@ class ButtonGroup extends Component {
   static defaultProps = {
     textLeft: '',
     iconLeft: '',
-    textRight: PropTypes.string,
-    iconRight: PropTypes.string,
+    textRight: '',
+    iconRight: '',
     onPressLeft: () => {},
     onPressRight: () => {},
     leftBigger: false,

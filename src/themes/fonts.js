@@ -2,6 +2,7 @@ const size = {
   title: 24,
   large: 20,
   regular: 16,
+  small: 10,
   icons: 24,
   iconsLarge: 28,
 };

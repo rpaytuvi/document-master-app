@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {Appearance, Text, View} from 'react-native';
-import {Colors, Fonts} from '../../../themes';
+import {Text, View} from 'react-native';
+import {Fonts} from '../../../themes';
 import Styles from './styles';
 
 class DocumentLargeListElement extends Component {
@@ -23,6 +23,9 @@ class DocumentLargeListElement extends Component {
   };
 
   renderList = (title, icon, list, type) => {
+    if (!list) {
+      return null;
+    }
     return (
       <View style={Styles.list}>
         <View style={[Styles.nameContainer, Styles.listNameContainer]}>
@@ -43,13 +46,31 @@ class DocumentLargeListElement extends Component {
     );
   };
 
-  render = () => {
-    const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const backgroundStyle = {
-      backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    };
+  renderLists = () => {
+    if (!this.props.contributors && !this.props.attachments) {
+      return null;
+    }
     return (
-      <View key={this.props.id} style={[Styles.container, backgroundStyle]}>
+      <View style={Styles.listsContainer}>
+        {this.renderList(
+          'Contributors',
+          'groups',
+          this.props.contributors?.map(c => c.Name),
+          'contributor',
+        )}
+        {this.renderList(
+          'Attachments',
+          'attachment',
+          this.props.attachments,
+          'attachment',
+        )}
+      </View>
+    );
+  };
+
+  render = () => {
+    return (
+      <View key={this.props.id} style={Styles.container}>
         <View style={Styles.nameContainer}>
           <Text style={Styles.name} numberOfLines={1}>
             {this.props.title}
@@ -58,20 +79,7 @@ class DocumentLargeListElement extends Component {
             Version {this.props.version}
           </Text>
         </View>
-        <View style={Styles.listsContainer}>
-          {this.renderList(
-            'Contributors',
-            'groups',
-            this.props.contributors,
-            'contributor',
-          )}
-          {this.renderList(
-            'Attachments',
-            'attachment',
-            this.props.attachments,
-            'attachment',
-          )}
-        </View>
+        {this.renderLists()}
       </View>
     );
   };

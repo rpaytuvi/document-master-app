@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Appearance, View} from 'react-native';
-import {Colors} from '../../themes';
+import {View} from 'react-native';
 import {MainButton} from '../';
 import Styles from './styles';
 
@@ -19,12 +18,8 @@ class Footer extends Component {
   };
 
   render = () => {
-    const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const backgroundStyle = {
-      backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    };
     return (
-      <View style={[Styles.container, backgroundStyle]}>
+      <View style={Styles.container}>
         <MainButton
           text={this.props.buttonText}
           icon={this.props.buttonIcon}

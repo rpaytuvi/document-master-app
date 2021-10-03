@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Appearance, Text, View} from 'react-native';
-import {Colors} from '../../../themes';
+import {Text, View} from 'react-native';
 import Styles from './styles';
 
 class DocumentSmallListElement extends Component {
@@ -20,14 +19,10 @@ class DocumentSmallListElement extends Component {
   };
 
   render = () => {
-    const isDarkMode = Appearance.getColorScheme() === 'dark';
-    const backgroundStyle = {
-      backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    };
     return (
       <View
         key={this.props.id}
-        style={[Styles.container, this.props.customStyle, backgroundStyle]}>
+        style={[Styles.container, this.props.customStyle]}>
         <Text style={Styles.name} numberOfLines={1}>
           {this.props.title}
         </Text>

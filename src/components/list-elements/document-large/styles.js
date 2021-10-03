@@ -8,6 +8,7 @@ const Styles = {
     borderRadius: Metrics.buttonRadius,
     flexDirection: 'column',
     justifyContent: 'center',
+    backgroundColor: Colors.white,
     ...Shadows.listElement,
   },
   nameContainer: {

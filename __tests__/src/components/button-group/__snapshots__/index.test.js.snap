@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-start",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderBottomRightRadius": 0,
+          "borderColor": "#e8e9ec",
+          "borderRadius": 4,
+          "borderTopRightRadius": 0,
+          "borderWidth": 2,
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#646d7a",
+              "fontSize": 20,
+              "fontWeight": "600",
+            },
+            Object {
+              "fontSize": 16,
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderBottomLeftRadius": 0,
+          "borderColor": "#e8e9ec",
+          "borderLeftWidth": 0,
+          "borderRadius": 4,
+          "borderTopLeftRadius": 0,
+          "borderWidth": 2,
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 8,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#646d7a",
+              "fontSize": 20,
+              "fontWeight": "600",
+            },
+            Object {
+              "fontSize": 16,
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;

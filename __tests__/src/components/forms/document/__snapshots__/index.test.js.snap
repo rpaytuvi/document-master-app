@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "flex-end",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderColor": "#e8e9ec",
+          "borderRadius": 4,
+          "borderTopWidth": 2,
+          "flexDirection": "column",
+          "margin": 32,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+              "fontWeight": "600",
+            }
+          }
+        >
+          
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderWidth": 0,
+              "flex": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Icon
+            name="close"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 16,
+              "marginBottom": 8,
+            }
+          }
+        >
+          Name
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="Name"
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderWidth": 2,
+              "marginBottom": 16,
+              "padding": 8,
+            }
+          }
+          value=""
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 16,
+              "marginBottom": 8,
+            }
+          }
+        >
+          Version
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="Version"
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderWidth": 2,
+              "marginBottom": 16,
+              "padding": 8,
+            }
+          }
+          value=""
+        />
+        <Text
+          style={
+            Object {
+              "fontSize": 16,
+              "marginBottom": 8,
+            }
+          }
+        >
+          File
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "borderColor": "#e8e9ec",
+              "borderRadius": 4,
+              "borderWidth": 2,
+              "flex": 0,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+              "width": 150,
+            }
+          }
+        >
+          <Icon
+            name="text-snippet"
+            size={24}
+            style={
+              Array [
+                Object {
+                  "alignSelf": "center",
+                  "color": "#646d7a",
+                  "marginRight": 8,
+                },
+                Object {
+                  "color": "#3f82f2",
+                },
+              ]
+            }
+          />
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#646d7a",
+                  "fontSize": 20,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "color": "#3f82f2",
+                  "fontSize": 16,
+                },
+              ]
+            }
+          >
+            Choose file
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderColor": "#e8e9ec",
+            "borderTopWidth": 2,
+            "flexDirection": "row",
+            "padding": 16,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#3f82f2",
+              "borderRadius": 4,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "opacity": 1,
+              "padding": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 20,
+                "fontWeight": "600",
+              }
+            }
+          >
+            Submit
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;
