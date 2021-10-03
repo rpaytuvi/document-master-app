@@ -21,12 +21,12 @@ Mobile application for iOS and Android built in React Native for managing your d
 1. Download or fork this project
 2. Go to your projects' directory
 3. Run `yarn`
+4. For iOS devices or simulators, run the following: `cd ios && pod install && cd ..`
 
 ## Local execution
 
 ### iOS
 
-`cd ios && pod install && cd ..`
 `yarn ios`
 
 ### Android
@@ -51,7 +51,7 @@ For Android, you will not have any issues.
 
 ## Follow up
 
-### Q) General design and ideas
+### General design and ideas
 
 I based my applications' architecture on another production application scheleton that is optimized for readability and, most important, scalability. The basic scheleton is:
 
@@ -73,19 +73,19 @@ My thought and work process was:
 6. Add testing suite and fix any errors that may have appeared.
 7. Final functional testing on iOS and Android before delivering.
 
-### Q) Which parts are you most proud of? And why?
+### Which parts are you most proud of? And why?
 
 I'm very proud on how I was able to deliver a clean solution with a good architecture with reutilisation of specific components. I'm also very proud on how I was able to develop a clean and quick service for obtaining and uploading the documents that can be used in the entire application. I'm sure that with these things my application is not only prepared for production but also scalable.
 
 On the other hand, I'm proud of overall my solution because I was able to understand, without any previous knowledge about it, how websockets connections work on React Native and use them correctly.
 
-### Q) If you had more time, what further improvements or new features would you add?
+### If you had more time, what further improvements or new features would you add?
 
 I would have worked more on the testing suite, as I only had the time to write thee unit testing of the visual components. I was not able to write the testing suite for the screens and I also would like to have worked on the testing of the services, utils and redux.
 
 I also would have improved the UI, as some details, colors, and fonts sizes are not correct. Also, my application does not look well on bigger screens, so I would have worked on improving the UI for them as well.
 
-### Q) What libraries did you add to the frontend? What are they used for?
+### What libraries did you add to the frontend? What are they used for?
 
 I just added these libraries:
 
